@@ -1,13 +1,40 @@
+/**
+ * =============================================================================
+ * KYAN SIMPSON - PORTFOLIO HOMEPAGE
+ * =============================================================================
+ * 
+ * This is your main portfolio page. It's organized into clear sections that
+ * you can easily modify with an AI assistant.
+ * 
+ * HOW TO EDIT THIS FILE:
+ * -----------------------
+ * Simply tell your AI assistant things like:
+ * - "Add a new experience at Goldman Sachs"
+ * - "Update my bio to mention my new internship"
+ * - "Add a new project I worked on"
+ * - "Change my LinkedIn URL"
+ * 
+ * SECTIONS IN THIS FILE:
+ * 1. Profile Photo & Name (top of the page)
+ * 2. Bio/Introduction (your personal pitch)
+ * 3. Experience (jobs and internships)
+ * 4. Education (schools and degrees)
+ * 5. Activities & Interests (clubs, sports, hobbies)
+ * 6. Now Section (what you're currently focused on)
+ * 7. Connect Section (contact information)
+ * 
+ * =============================================================================
+ */
+
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
-    // Set up stagger animations
+    // Animation setup - no need to modify this
     const animatedElements = document.querySelectorAll('[data-animate]');
     animatedElements.forEach((el, index) => {
       const htmlElement = el as HTMLElement;
@@ -22,121 +49,215 @@ export default function Home() {
       <main>
         <div className="main-grid">
           <article data-animation-controller="true">
+            
+            {/* ============================================================
+                SECTION 1: PROFILE PHOTO & NAME
+                ============================================================
+                To change the profile photo:
+                1. Add your new photo to the /public folder
+                2. Update the src path below (e.g., "/your-photo.jpg")
+                
+                To change your name, simply edit the text in the <h1> tag
+            */}
             <div className="prose">
+              {/* Profile Photo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
-                src="/halogo.svg" 
-                alt="Henry Allen Logo" 
-                className="logo"
+                src="/kyan.png" 
+                alt="Kyan Simpson" 
+                className="profile-photo"
                 data-animate="" 
                 style={{ "--stagger": 0 } as React.CSSProperties}
               />
+              
+              {/* Your Name */}
               <h1 data-animate="" style={{ "--stagger": 1 } as React.CSSProperties}>
-                Henry Allen
+                Kyan Simpson
               </h1>
+              
+              {/* ============================================================
+                  SECTION 2: BIO / INTRODUCTION
+                  ============================================================
+                  This is your elevator pitch. Keep it concise but impactful.
+                  Use <em> tags for italic emphasis on key phrases.
+                  
+                  To edit: Just change the text between the <p> tags
+              */}
               <p data-animate="" style={{ "--stagger": 2 } as React.CSSProperties}>
-                <em>Building AI solutions</em>. Self-taught AI engineer turning wild ideas into scalable products, 
-                from voice systems and RAG pipelines to a 20-hour startup exit and GPU-powered avatars for 10,000+ London Marathon runners.
+                <em>Finance meets football</em>. Mathematics and Economics student at Amherst College 
+                with hands-on experience in investment banking and private equity across New York and beyond.
               </p>
               <p data-animate="" style={{ "--stagger": 3 } as React.CSSProperties}>
-                I also lead London&apos;s largest developer community, running hackathons and partnerships, 
-                and along the way I&apos;ve made enough API calls to make rate limiters cry.
+                Former Reading FC Academy player (Category 1, UK&apos;s highest level) turned Honorary Academic Scholar 
+                at Harrow School. The same discipline from elite youth football now drives my passion for 
+                financial markets and development economics.
               </p>
             </div>
 
+            {/* ============================================================
+                SECTIONS 3-5: EXPERIENCE, EDUCATION & ACTIVITIES
+                ============================================================
+                These are displayed in a 3-column grid on desktop.
+                
+                STRUCTURE OF EACH ITEM:
+                <div className="item-block">
+                  <a href="URL">Company/School Name <ExternalLinkIcon /></a>
+                  <p>Role and brief description</p>
+                </div>
+                
+                TO ADD A NEW ITEM: Copy an existing item-block and modify it
+                TO REMOVE AN ITEM: Delete the entire <div className="item-block">...</div>
+                TO ADD A LINK: Use <a href="https://...">Text <ExternalLinkIcon /></a>
+                TO REMOVE A LINK: Use <a>Text</a> (no href)
+            */}
             <div className="scroller" data-animate="" style={{ "--stagger": 4 } as React.CSSProperties}>
               <div className="stack">
+                
+                {/* ---------- EXPERIENCE COLUMN ---------- */}
                 <div className="column">
                   <h2>Experience</h2>
+                  
+                  {/* Experience Item 1 */}
                   <div className="item-block">
-                    <Link href="/the20hr-co">
-                      The20hr.co
+                    <a href="https://www.broadhavencapital.com/" rel="noopener" target="_blank">
+                      Broadhaven Capital Partners
                       <ExternalLinkIcon />
-                    </Link>
-                    <p>Co-Founder. Built, launched & sold in 20 hours. Europe&apos;s fastest exit.</p>
+                    </a>
+                    <p>Incoming 2026 Investment Banking Summer Analyst. New York.</p>
                   </div>
+                  
+                  {/* Experience Item 2 */}
                   <div className="item-block">
-                    <a>AI Engineer</a>
-                    <p>Fifty Five And Five. Built AI solutions for TCS executives and London Marathon.</p>
+                    <a href="https://www.middleground.com/" rel="noopener" target="_blank">
+                      MiddleGround Capital
+                      <ExternalLinkIcon />
+                    </a>
+                    <p>Summer 2025 Private Equity Analyst. New York.</p>
+                  </div>
+                  
+                  {/* Experience Item 3 */}
+                  <div className="item-block">
+                    <a href="https://shoalsgrowthpartners.com/" rel="noopener" target="_blank">
+                      Shoals Growth Partners
+                      <ExternalLinkIcon />
+                    </a>
+                    <p>Private Equity Analyst. Remote. Sep - Dec 2024.</p>
+                  </div>
+                  
+                  {/* Experience Item 4 */}
+                  <div className="item-block">
+                    <a>Rebellion Research</a>
+                    <p>Economic Research Analyst. Feb - Aug 2024.</p>
                   </div>
                 </div>
 
+                {/* ---------- EDUCATION COLUMN ---------- */}
                 <div className="column">
-                  <h2>Projects</h2>
+                  <h2>Education</h2>
+                  
+                  {/* Education Item 1 */}
                   <div className="item-block">
-                    <a href="https://github.com/mousberg/le-commit" rel="noopener" target="_blank">
-                      Le Commit
+                    <a href="https://www.amherst.edu/" rel="noopener" target="_blank">
+                      Amherst College
                       <ExternalLinkIcon />
                     </a>
-                    <p>1st place RAISE SUMMIT hackathon, Paris.</p>
+                    <p>BA Mathematics & Economics. Class of 2027. Math Peer Tutor.</p>
                   </div>
+                  
+                  {/* Education Item 2 */}
                   <div className="item-block">
-                    <a href="https://github.com/HenryAllen04/Veo3-Chain" rel="noopener" target="_blank">
-                      Veo3-Chain
+                    <a href="https://www.harrowschool.org.uk/" rel="noopener" target="_blank">
+                      Harrow School
                       <ExternalLinkIcon />
                     </a>
-                    <p>1st place Cursor&apos;s First London hackathon.</p>
+                    <p>A-Levels: Maths (A*), Economics (A*), Physics (A*), Geography (A). Honorary Academic Scholar.</p>
                   </div>
+                  
+                  {/* Education Item 3 */}
                   <div className="item-block">
-                    <a href="https://github.com/dame-time/sav-quest" rel="noopener" target="_blank">
-                      Sav Quest
-                      <ExternalLinkIcon />
-                    </a>
-                    <p>1st place Entrepreneur First X Builder League, Milan.</p>
+                    <a>Reddam House Berkshire</a>
+                    <p>11 A*s at GCSE. Academic Scholar. UKMT Maths Challenge &apos;Best in School&apos;. 2017-2021.</p>
                   </div>
                 </div>
 
+                {/* ---------- ACTIVITIES & MORE COLUMN ---------- */}
                 <div className="column">
-                  <h2>Other</h2>
+                  <h2>Activities & More</h2>
+                  
+                  {/* Football Item 1 - Reading FC */}
                   <div className="item-block">
-                    <a href="https://www.unicrnmafia.com/" rel="noopener" target="_blank">
-                      Unicorn Mafia
+                    <a href="https://www.readingfc.co.uk/" rel="noopener" target="_blank">
+                      Reading FC Academy
                       <ExternalLinkIcon />
                     </a>
-                    <p>Leading London&apos;s largest developer community, organising hackathons and partnerships!</p>
+                    <p>Category 1 Academy (highest UK level). Captain of Premier League Cup team. 2014-2019.</p>
                   </div>
+                  
+                  {/* Football Item 2 - Achievements */}
                   <div className="item-block">
-                    <a>Open Water Diving License</a>
-                    <p>Certified diver exploring underwater adventures.</p>
+                    <a>Football Achievements</a>
+                    <p>Winner of Iber Cup tournaments. Top scorer at Harrow School. 196 career goals, 148 assists.</p>
                   </div>
+                  
+                  {/* Activity Item 3 */}
                   <div className="item-block">
-                    <a>Travel & Exploration</a>
-                    <p>I like to spend my spare time travelling and exploring new places.</p>
+                    <a>Scholars of Finance</a>
+                    <p>Member at Amherst College. Club Rugby and Club Soccer.</p>
+                  </div>
+                  
+                  {/* Activity Item 4 */}
+                  <div className="item-block">
+                    <a>Leadership & Awards</a>
+                    <p>Head of Harrow Afro-Caribbean Society. NCH Economics Essay Prize. Silver Duke of Edinburgh.</p>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* ============================================================
+                SECTION 6: NOW
+                ============================================================
+                What you're currently focused on. Update this regularly to
+                keep your site feeling fresh and current.
+            */}
             <div className="prose" data-animate="" style={{ "--stagger": 5 } as React.CSSProperties}>
               <h2>Now</h2>
               <p>
-                Passionate about applying cutting-edge AI to solve real-world challenges, 
-                driving both business impact and customer adoption. Committed to lifelong 
-                learning and{" "}
-                <em>continuously expanding knowledge in AI and related fields.</em>
+                Currently in my junior year at Amherst College, diving deep into 
+                <em> development economics and financial globalization</em>. Taking courses that bridge 
+                quantitative analysis with real-world economic policy.
               </p>
               <p>
-                Building production-ready AI solutions that translate complex technical concepts 
-                into client-ready outcomes. Utilizing modern tools like Cursor & Claude Code 
-                to boost productivity and ship faster.
+                Preparing for my upcoming summer at MiddleGround Capital in New York, 
+                where I&apos;ll be gaining hands-on private equity experience. Looking forward to 
+                applying classroom knowledge to live deal analysis.
               </p>
               <p>
-                Currently focused on AI system design, full-stack development, and helping 
-                teams adopt AI technologies through clear technical communication and 
-                iterative deployment strategies.
+                Outside academics, staying active with club rugby and soccer, and continuing 
+                to mentor peers in mathematics. Always eager to connect with professionals 
+                in finance and learn from their experiences.
               </p>
             </div>
 
+            {/* ============================================================
+                SECTION 7: CONNECT
+                ============================================================
+                Your contact information. Update the LinkedIn URL and email.
+                
+                TO ADD MORE LINKS: Copy the <a> tag pattern
+                Example: <a href="https://twitter.com/yourhandle">Twitter</a>
+            */}
             <div className="prose" data-animate="" style={{ "--stagger": 6 } as React.CSSProperties}>
               <h2>Connect</h2>
               <p>
                 Reach me at{" "}
-                <a href="https://linkedin.com/in/henryallen" rel="noopener" target="_blank">
+                <a href="https://www.linkedin.com/in/kyan-simpson-893094236/" rel="noopener" target="_blank">
                   LinkedIn
                 </a>{" "}
-                or <a href="mailto:Henry01Allen@gmail.com" className="henry-email">Henry01Allen@gmail.com</a>.
+                or <a href="mailto:ksimpson27@amherst.edu">ksimpson27@amherst.edu</a>.
               </p>
             </div>
+            
           </article>
         </div>
       </main>

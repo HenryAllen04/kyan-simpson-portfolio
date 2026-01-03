@@ -1,200 +1,188 @@
-# Henry's Portfolio
+# Kyan Simpson - Personal Portfolio
 
-A modern portfolio of Henry Allens website built with Next.js, Tailwind CSS, and shadcn/ui.
+A clean, minimal portfolio website built with Next.js. Designed to be easily customizable using an AI assistant like Cursor or Claude.
 
-## Tech Stack
+## 🚀 Quick Start
 
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn/ui** - Beautiful, accessible, and customizable components
-- **Lucide React** - Beautiful & consistent icons
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm, yarn, or pnpm
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
+### Running Locally
 
 ```bash
+# Install dependencies
 npm install
-```
 
-3. Run the development server:
-
-```bash
+# Start the development server
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Available Scripts
+### Deploying to the Web
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint
-
-## Project Structure
-
-```
-henry-portfolio/
-├── src/
-│   ├── app/                 # Next.js App Router
-│   │   ├── globals.css      # Global styles
-│   │   ├── layout.tsx       # Root layout with SEO metadata
-│   │   ├── page.tsx         # Homepage
-│   │   └── the20hr-co/      # Experience page route
-│   │       ├── layout.tsx   # SEO-optimized layout for experience page
-│   │       └── page.tsx     # The20hr.co story page
-│   ├── components/          # React components
-│   │   ├── ui/              # shadcn/ui components
-│   │   └── BackNavigation.tsx # Reusable back navigation overlay
-│   └── lib/                 # Utility functions
-├── public/                  # Static assets
-│   ├── halogo.svg          # Brand logo (used as favicon)
-│   ├── site.webmanifest    # PWA configuration
-│   └── images/             # Image assets
-└── package.json
-```
-
-## Adding Components
-
-To add new shadcn/ui components:
-
-```bash
-npx shadcn@latest add [component-name]
-```
-
-Example:
-```bash
-npx shadcn@latest add dialog
-npx shadcn@latest add form
-npx shadcn@latest add navigation-menu
-```
-
-## Architecture & SEO
-
-### Layout System
-
-The project uses a layered layout approach for optimal SEO and functionality:
-
-#### Root Layout (`src/app/layout.tsx`)
-- **Purpose**: Defines global metadata, viewport settings, and PWA configuration
-- **Exports**: `metadata` (SEO tags) and `viewport` (responsive settings)
-- **Features**:
-  - Open Graph and Twitter Card metadata
-  - Custom favicon using brand logo (`halogo.svg`)
-  - Web manifest reference for PWA support
-  - Global theme and viewport configuration
-
-#### Route-Specific Layouts (`src/app/the20hr-co/layout.tsx`)
-- **Purpose**: Page-specific SEO optimization and structured data
-- **Server Component**: Handles metadata export (required for SEO)
-- **Features**:
-  - Targeted meta descriptions and keywords
-  - JSON-LD structured data for search engines
-  - Social media optimization with custom images
-  - Canonical URLs for SEO
-
-#### Client Components (`page.tsx` files)
-- **Purpose**: Interactive functionality and animations
-- **Client-side**: Uses `"use client"` directive for interactivity
-- **Features**:
-  - Stagger animations and user interactions
-  - Dynamic content and scroll behaviors
-  - Clean separation from SEO concerns
-
-### SEO Implementation
-
-The portfolio implements comprehensive SEO best practices:
-
-#### Metadata Strategy
-- **Hierarchical**: Root layout provides global defaults, route layouts override specifics
-- **Complete**: Title, description, keywords, authors, and social media tags
-- **Dynamic**: Each page has tailored metadata for optimal search visibility
-
-#### Structured Data (JSON-LD)
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The20hr.co - Europe's Fastest Startup Exit",
-  "author": { "@type": "Person", "name": "Henry Allen" },
-  "image": { "@type": "ImageObject", "url": "..." }
-}
-```
-
-#### Image Optimization
-- **Descriptive Alt Text**: SEO-friendly image descriptions with context
-- **Lazy Loading**: Performance optimization for images and iframes
-- **Social Sharing**: Optimized images for Open Graph and Twitter Cards
-
-#### Semantic HTML
-- **Article Structure**: Proper `<article>`, `<header>`, `<section>` tags
-- **Microdata**: Schema.org markup for enhanced search results
-- **Accessibility**: ARIA labels and semantic navigation
-
-### Progressive Web App (PWA)
-
-#### Web Manifest (`public/site.webmanifest`)
-The `site.webmanifest` file configures your portfolio as a Progressive Web App:
-
-```json
-{
-  "name": "Henry Allen - AI Engineer & Entrepreneur",
-  "short_name": "Henry Allen",
-  "description": "Portfolio of Henry Allen - Self-taught AI engineer...",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
-  "icons": [
-    {
-      "src": "/halogo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
-```
-
-#### PWA Features
-- **Installable**: Users can install your portfolio as a native app
-- **Offline Ready**: Cached resources for offline viewing
-- **App-like Experience**: Standalone display mode removes browser chrome
-- **Custom Branding**: Uses your logo for app icons and splash screens
-
-#### Browser Benefits
-- **Modern Favicon**: SVG favicon scales perfectly across all devices
-- **Mobile Optimization**: Proper touch icons and theme colors
-- **Search Engine Recognition**: Helps search engines understand your site structure
-
-## Customization
-
-- **Colors**: Modify CSS variables in `src/app/globals.css`
-- **Components**: Customize shadcn/ui components in `src/components/ui/`
-- **Fonts**: Configure in `src/app/layout.tsx`
-- **SEO**: Update metadata in layout files for different pages
-- **PWA**: Modify `site.webmanifest` for app configuration
-
-## Deployment
-
-The easiest way to deploy is using [Vercel](https://vercel.com/):
+The easiest way to deploy is with [Vercel](https://vercel.com):
 
 1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy with zero configuration
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click "New Project" and import your repository
+4. Click "Deploy" - that's it!
 
-## Learn More
+---
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
+## 📝 How to Edit Your Website (For Non-Technical Users)
+
+This website is designed to be edited easily with an AI assistant. Simply tell your AI what you want to change in plain English!
+
+### File Locations
+
+| What you want to change | File to edit |
+|------------------------|--------------|
+| Main page content | `src/app/page.tsx` |
+| Site title & SEO | `src/app/layout.tsx` |
+| Colors & styling | `src/app/globals.css` |
+| Profile photo | Add to `/public` folder |
+
+### Example Prompts for Your AI Assistant
+
+Just copy and paste these prompts (modified with your info) to your AI:
+
+#### Adding a New Experience
+```
+Add a new experience to my portfolio:
+- Company: [Company Name]
+- Role: [Your Role]
+- Description: [Brief description]
+- Website: [URL if any]
+```
+
+#### Updating Your Bio
+```
+Update my bio to say: [Your new bio text]
+```
+
+#### Adding a New Education Entry
+```
+Add a new education entry:
+- School: [School Name]
+- Degree: [Your Degree]
+- Years: [Start - End]
+- Description: [Brief description]
+```
+
+#### Changing Your Profile Photo
+```
+Change my profile photo to use the new image I added at /public/[filename].jpg
+```
+
+#### Adding a New Activity/Interest
+```
+Add a new activity to my portfolio:
+- Title: [Activity Name]
+- Description: [Brief description]
+```
+
+#### Updating Your Contact Info
+```
+Update my email to [newemail@example.com]
+Update my LinkedIn URL to [new LinkedIn URL]
+```
+
+#### Changing Site Colors
+```
+Change the website accent color to [color name or hex code]
+```
+
+---
+
+## 🎨 Customization Guide
+
+### Changing Your Profile Photo
+
+1. Add your new photo to the `/public` folder
+2. Tell your AI: "Change my profile photo to use `/your-photo.jpg`"
+
+**Recommended photo specs:**
+- Square aspect ratio (1:1)
+- At least 200x200 pixels
+- JPG or PNG format
+
+### Understanding the Page Structure
+
+The main page (`src/app/page.tsx`) has these sections:
+
+1. **Profile Photo & Name** - Your photo and name at the top
+2. **Bio** - Your personal introduction (2 paragraphs)
+3. **Experience** - Your jobs and internships
+4. **Education** - Schools and degrees
+5. **Activities** - Clubs, sports, interests
+6. **Now** - What you're currently doing (update regularly!)
+7. **Connect** - Contact information
+
+### Adding a New Page
+
+If you want to add a new page (like a projects page), tell your AI:
+```
+Create a new page at /projects that lists my projects with the same styling as the homepage
+```
+
+---
+
+## 🛠 Technical Details
+
+### Tech Stack
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Custom CSS (no Tailwind on main components)
+- **Fonts:** Inter, Sohne, Newsreader
+- **Analytics:** Vercel Analytics (optional)
+
+### Project Structure
+```
+portfolio-site/
+├── public/               # Static files (images, fonts)
+│   ├── kyan.png         # Your profile photo
+│   ├── kslogo.svg       # Site favicon
+│   └── fonts/           # Custom fonts
+├── src/
+│   ├── app/
+│   │   ├── page.tsx     # Homepage content
+│   │   ├── layout.tsx   # Site-wide settings
+│   │   └── globals.css  # Styling
+│   └── components/      # Reusable components
+├── package.json         # Dependencies
+└── README.md           # This file
+```
+
+### Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Run production build
+- `npm run lint` - Check for code errors
+
+---
+
+## 💡 Tips
+
+1. **Keep it updated** - Update your "Now" section regularly to show you're active
+2. **Quality over quantity** - Better to have 3-4 strong experiences than 10 weak ones
+3. **Be specific** - Quantify achievements where possible
+4. **Test on mobile** - Always check how changes look on your phone
+
+---
+
+## 🆘 Need Help?
+
+If something breaks:
+1. Tell your AI assistant: "Something is broken, here's the error: [paste error]"
+2. They can usually fix it immediately!
+
+If you want to start fresh:
+1. Tell your AI: "Reset the homepage to a clean template"
+
+---
+
+## 📄 License
+
+This is your personal portfolio - do whatever you want with it!
+
+---
+
+*Built with ❤️ as a template for easy customization*

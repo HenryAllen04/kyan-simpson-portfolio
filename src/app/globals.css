@@ -370,6 +370,25 @@ a:hover {
   }
 }
 
+/* Profile Photo */
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mono4);
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+  }
+}
+
 .prose h2 {
   margin-top: 48px;
   margin-bottom: 16px;
