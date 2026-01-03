@@ -84,13 +84,12 @@ export default function Home() {
                   To edit: Just change the text between the <p> tags
               */}
               <p data-animate="" style={{ "--stagger": 2 } as React.CSSProperties}>
-                <em>Finance meets football</em>. Mathematics and Economics student at Amherst College 
+                <em>Driven by numbers</em>. Mathematics and Economics student at Amherst College 
                 with hands-on experience in investment banking and private equity across New York and beyond.
               </p>
               <p data-animate="" style={{ "--stagger": 3 } as React.CSSProperties}>
-                Former Reading FC Academy player (Category 1, UK&apos;s highest level) turned Honorary Academic Scholar 
-                at Harrow School. The same discipline from elite youth football now drives my passion for 
-                financial markets and development economics.
+                Honorary Academic Scholar from Harrow School with straight A* grades in Maths, Economics, and Physics. 
+                Passionate about financial markets, development economics, and building a career in finance.
               </p>
             </div>
 
